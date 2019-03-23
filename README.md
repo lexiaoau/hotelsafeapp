@@ -7,6 +7,8 @@ Hotel Safe App
 
 The application is a basic representation of a hotel safe where you input a PIN, the safe locks with the stored PIN and you open it again by inputting the correct PIN. The rules are as follows:
 
+![Alt text](/7748380.jpg)
+
 ### PIN should be 4 digits
 ### PIN should show each digit in display on key press with a limit of 4
 ### Enter button should store the PIN code IF the safe is not currently locked
@@ -20,4 +22,6 @@ Use css, sass or styled components as you see fit to make the app look similar t
 Use https://github.com/facebookincubator/create-react-app as a framework to build the app. Keep in mind that we use React with Redux. It’s a pure frontend application so you don’t need to do any service calls etc.
 
 Bonus points for enzyme or jest unit tests.
+
+
 
