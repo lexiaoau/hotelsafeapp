@@ -1,0 +1,10 @@
+export const CHANGE_LOCKSTATUS = 'CHANGE_LOCKSTATUS';
+
+export const CHANGE_PIN_ADD = 'CHANGE_PIN_ADD';
+export const CHANGE_PIN_TOGGLE_LOCK = 'CHANGE_PIN_TOGGLE_LOCK';
+export const CHANGE_PIN_CLEAR = 'CHANGE_PIN_CLEAR';
+
+
+
+export const MAX_PIN_DIGITS = 4;
+
