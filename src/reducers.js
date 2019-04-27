@@ -20,14 +20,16 @@ export const changePin = (state=initialStatePin, action={}) => {
       if( curEnteredPin.length === MAX_PIN_DIGITS )
       {
           console.log("MAX_PIN_DIGITS reached");
-          return Object.assign({}, state, {errorMsg: "PIN maximum length reached" } );
+          return {...state, errorMsg: "PIN maximum length reached"};
+          // return Object.assign({}, state, {errorMsg: "PIN maximum length reached" } );
       }
       else
       {
           return Object.assign({}, state, {enteredPin: state.enteredPin.concat(action.payload) ,errorMsg: "" } )          
       }
     case CHANGE_PIN_CLEAR:
-      return Object.assign({}, state, {enteredPin: '' , errorMsg: ""} )
+      return {...state, enteredPin: '' , errorMsg: ""}
+      // return Object.assign({}, state, {enteredPin: '' , errorMsg: ""} )
     case CHANGE_PIN_TOGGLE_LOCK:        
         if( state.isLocked === false )
         {
@@ -35,11 +37,13 @@ export const changePin = (state=initialStatePin, action={}) => {
             if( state.enteredPin.length < MAX_PIN_DIGITS )
             {
                 console.log("CHANGE_PIN_TOGGLE_LOCK isLocked === false <MAX_PIN_DIGITS");
-                return Object.assign({}, state, {errorMsg: "PIN too short." } );                
+                return {...state, errorMsg: "PIN too short."};
+                // return Object.assign({}, state, {errorMsg: "PIN too short." } );                
             }
             else if( state.enteredPin.length === MAX_PIN_DIGITS )
             {
-              return Object.assign({}, state, {isLocked: true , savedPin: state.enteredPin, enteredPin: '', errorMsg: "" } )
+              return {...state, isLocked: true , savedPin: state.enteredPin, enteredPin: '', errorMsg: ""};
+              // return Object.assign({}, state, {isLocked: true , savedPin: state.enteredPin, enteredPin: '', errorMsg: "" } )
             }
             break;
         }
@@ -47,12 +51,14 @@ export const changePin = (state=initialStatePin, action={}) => {
         {
             if( state.enteredPin === state.savedPin )
             {
-              return Object.assign({}, state, {isLocked: false , savedPin: '', enteredPin: '', errorMsg: "" } )  
+              return {...state, isLocked: false , savedPin: '', enteredPin: '', errorMsg: ""};
+              // return Object.assign({}, state, {isLocked: false , savedPin: '', enteredPin: '', errorMsg: "" } )  
             }
             else
             {
               console.log("CHANGE_PIN_TOGGLE_LOCK isLocked === true pin not match");
-              return Object.assign({}, state, {errorMsg: "PIN not matched." } );
+              return {...state, errorMsg: "PIN not matched."};
+              // return Object.assign({}, state, {errorMsg: "PIN not matched." } );
             }
                     
         }
