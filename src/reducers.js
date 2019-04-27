@@ -25,7 +25,8 @@ export const changePin = (state=initialStatePin, action={}) => {
       }
       else
       {
-          return Object.assign({}, state, {enteredPin: state.enteredPin.concat(action.payload) ,errorMsg: "" } )          
+          return {...state, enteredPin: state.enteredPin.concat(action.payload) ,errorMsg: "" };
+          // return Object.assign({}, state, {enteredPin: state.enteredPin.concat(action.payload) ,errorMsg: "" } )          
       }
     case CHANGE_PIN_CLEAR:
       return {...state, enteredPin: '' , errorMsg: ""}
